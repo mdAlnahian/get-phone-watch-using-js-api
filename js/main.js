@@ -22,10 +22,11 @@ const getPhoneInput = () => {
       .then((res) => res.json())
       .then((data) => getTheDetailsOfPhones(data.data));
   }
+  searchFeild.value = "";
 };
 // getPhoneInput();
 const getTheDetailsOfPhones = (phones) => {
-  //   console.log(phones)
+    // console.log(phones)
   const err = document.getElementById("err2");
   if (!phones) {
     err.innerText = `Sorry No result Matched😥`;
@@ -36,7 +37,7 @@ const getTheDetailsOfPhones = (phones) => {
     container.textContent = "";
     phones.slice(0, 3).forEach((phone) => {
       // console.log(phones.length)
-      // console.log(phone)
+      console.log(phone)
       const div = document.createElement("div");
       div.classList.add("element");
       div.innerHTML = `
@@ -71,7 +72,7 @@ const explorePhoneDetails = (slug) => {
 };
 
 const moreInfoContainer = (details) => {
-  // console.log(details);
+  console.log(details);
   const moreInfoContainer = document.getElementById("more-info-container");
   moreInfoContainer.textContent = "";
   const div = document.createElement("div");
@@ -88,8 +89,15 @@ const moreInfoContainer = (details) => {
                 <h4 class="card-text">${details.name}</h4>
                 <p>STORAGE: ${details.mainFeatures.storage}</p>
                 <p>DISPLAY: ${details.mainFeatures.displaySize} </p>
-                <h6> ${details.mainFeatures.chipSet} </h6>
-                <p>${details.mainFeatures.sensors} </p>
+                <h6>CHIPSET: ${details.mainFeatures.chipSet} </h6>
+                <h6>OTHERS:Bluetooth: ${
+                  details.others.Bluetooth
+                    ? details.others.Bluetooth
+                    : "not available"
+                } ,WLAN: ${
+    details.others.WLAN ? details.others.WLAN : "not available"
+  } </h6>
+                <p>SENSORS: ${details.mainFeatures.sensors} </p>
                  <h5 class="card-title">${
                    details.releaseDate
                      ? details.releaseDate
