@@ -35,7 +35,7 @@ const getTheDetailsOfPhones = (phones) => {
                 const div = document.createElement("div");
                 div.classList.add("element");
                 div.innerHTML = `
-                     <div class="col">
+                     <div class="col shadow-lg rounded">
                         <div class="card p-4">
                         <img src="${phone.image}" class="card-img-top phone-image" alt="...">
                         <div class="card-body">
@@ -51,12 +51,6 @@ const getTheDetailsOfPhones = (phones) => {
         
         `;
                 container.appendChild(div);
-                if(phones.length > 21){
-                    div.style.display="none"
-                    const showAllButton =
-                      document.getElementById("button-addon2");
-                    showAllButton.style.display="block"
-                }
               });
 
   }
