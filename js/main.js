@@ -1,4 +1,5 @@
 // js started from here
+
 //show all button
 const showAllButton = (displayStyle) => {
   const showAll = document.getElementById("btn-to-show-all");
@@ -26,7 +27,7 @@ const getPhoneInput = () => {
 };
 // getPhoneInput();
 const getTheDetailsOfPhones = (phones) => {
-    // console.log(phones)
+  // console.log(phones)
   const err = document.getElementById("err2");
   if (!phones) {
     err.innerText = `Sorry No result Matched😥`;
@@ -37,7 +38,7 @@ const getTheDetailsOfPhones = (phones) => {
     container.textContent = "";
     phones.slice(0, 3).forEach((phone) => {
       // console.log(phones.length)
-      console.log(phone)
+      console.log(phone);
       const div = document.createElement("div");
       div.classList.add("element");
       div.innerHTML = `
@@ -154,3 +155,4 @@ const allResult = (phones) => {
 
   showAllButton("none");
 };
+//end
