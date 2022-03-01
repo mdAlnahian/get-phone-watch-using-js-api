@@ -36,7 +36,7 @@ const getTheDetailsOfPhones = (phones) => {
     const container = document.getElementById("container");
     // console.log(phones);
     container.textContent = "";
-    phones.slice(0, 3).forEach((phone) => {
+    phones.slice(0, 6).forEach((phone) => {
       // console.log(phones.length)
       console.log(phone);
       const div = document.createElement("div");
